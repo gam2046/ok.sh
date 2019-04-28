@@ -697,6 +697,7 @@ _request() {
     curl -nsSig \
         -H "Accept: ${OK_SH_ACCEPT}" \
         -H "Content-Type: ${content_type}" \
+        -u "${OK_SH_GITHUB_USERNAME}:${OK_SH_GITHUB_TOKEN}" \
         ${etag:+-H "If-None-Match: \"${etag}\""} \
         ${has_stdin:+--data-binary @-} \
         ${trace_curl:+--trace-ascii /dev/stderr} \
